@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: app-display-route
+          uri: lb://app-display-service # 使用lb://前缀进行负载均衡
+          predicates:
+            - Path=/app-display/**
+          filters:
+            - StripPrefix=1
