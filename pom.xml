@@ -25,13 +25,14 @@
     <modules>
         <module>nacos-server</module>
         <module>api-gateway</module>
-        <module>ms-db</module>
+        <module>astore-db</module>
         <module>search-service</module>
         <module>review-rating-service</module>
         <module>purchase-distribution-service</module>
         <module>user-system-service</module>
         <module>gift-code-service</module>
         <module>config-server</module>
+        <module>astore-service</module>
     </modules>
     <dependencies>
         <dependency>
