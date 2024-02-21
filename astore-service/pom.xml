@@ -8,9 +8,16 @@
         <artifactId>APP-Store-Backend</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <modules>
+        <module>search-service</module>
+        <module>review-rating-service</module>
+        <module>purchase-distribution-service</module>
+        <module>user-system-service</module>
+        <module>gift-code-service</module>
+    </modules>
 
     <artifactId>astore-service</artifactId>
-
+    <packaging>pom</packaging>
     <properties>
         <maven.compiler.source>20</maven.compiler.source>
         <maven.compiler.target>20</maven.compiler.target>
