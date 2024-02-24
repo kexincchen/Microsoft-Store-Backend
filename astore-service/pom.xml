@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modules>
-        <module>review-rating-service</module>
+        <module>review-service</module>
         <module>purchase-distribution-service</module>
         <module>user-system-service</module>
         <module>gift-code-service</module>
