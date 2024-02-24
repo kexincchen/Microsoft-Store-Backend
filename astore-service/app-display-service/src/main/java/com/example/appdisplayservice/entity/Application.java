@@ -3,10 +3,14 @@ package com.example.appdisplayservice.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.IdType;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+@Data
 @TableName("applications")
+@NoArgsConstructor
 public class Application {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
@@ -82,6 +86,20 @@ public class Application {
 
     public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Application{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", category='" + category + '\'' +
+                ", price=" + price +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", releaseDate=" + releaseDate +
+                '}';
     }
 }
 

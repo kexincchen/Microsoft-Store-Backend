@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Main {
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/appstore_server";
     static final String USER = "root";
     static final String PASS = "Tian3990113";
@@ -21,7 +21,7 @@ public class Main {
         //Initialize the script runner
         ScriptRunner sr = new ScriptRunner(con);
         String filePath = "/Users/clarec/Documents/GitHub/Microsoft-Store-Backend/ms-db/src/main/java/";
-        String filename = "create.sql";
+        String filename = "insert.sql";
         //Creating a reader object
         Reader reader = new BufferedReader(new FileReader(filePath.concat(filename)));
         //Running the script

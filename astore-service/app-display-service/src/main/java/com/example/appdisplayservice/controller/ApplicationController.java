@@ -1,5 +1,7 @@
 package com.example.appdisplayservice.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,15 +13,16 @@ import java.util.List;
 @RequestMapping("/applications")
 public class ApplicationController {
 
-    private final ApplicationService applicationService;
+    @Autowired
+    private ApplicationService applicationService;
 
-    public ApplicationController(ApplicationService applicationService) {
-        this.applicationService = applicationService;
-    }
+    @GetMapping("/all")
+    public ResponseEntity<String> getAllApplications() {
 
-    @GetMapping("/")
-    public List<Application> getAllApplications() {
-        return applicationService.listAllApplications();
+        List<Application> applications = applicationService.listAllApplications();
+        System.out.println(applications);
+//        return ResponseEntity.ok(applications.toString());
+        return ResponseEntity.ok(" I AM GOOD");
     }
 
 
