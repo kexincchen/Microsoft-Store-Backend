@@ -9,12 +9,11 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modules>
-        <module>search-service</module>
         <module>review-rating-service</module>
         <module>purchase-distribution-service</module>
         <module>user-system-service</module>
         <module>gift-code-service</module>
-        <module>app-display-service</module>
+        <module>app-service</module>
     </modules>
 
     <artifactId>astore-service</artifactId>
