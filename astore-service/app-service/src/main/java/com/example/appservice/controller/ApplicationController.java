@@ -22,8 +22,8 @@ public class ApplicationController {
 
         List<Application> applications = applicationService.listAllApplications();
         System.out.println(applications);
-//        return ResponseEntity.ok(applications.toString());
-        return ResponseEntity.ok(" I AM GOOD");
+        return ResponseEntity.ok(applications.toString());
+//        return ResponseEntity.ok(" I AM GOOD");
     }
 
     @GetMapping("/search")

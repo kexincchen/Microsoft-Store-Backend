@@ -22,11 +22,11 @@ public class ReviewController {
 
     @PostMapping("/add")
     public void addReview(@RequestBody String comment, @RequestParam Integer rating, @RequestParam Long userid, @RequestParam Long appid) {
-        Review review = new Review(appid, userid, comment, rating, );
+        Review review = new Review(appid, userid, comment, rating, new Date());
         reviewService.addReview(review);
     }
 
-    @GetMapping("/get/{applicationId}")
+    @GetMapping("/getByApp/{applicationId}")
     public List<Review> getReviewsByApplicationId(@PathVariable Long applicationId) {
         return reviewService.getReviewsByApplicationId(applicationId);
     }
