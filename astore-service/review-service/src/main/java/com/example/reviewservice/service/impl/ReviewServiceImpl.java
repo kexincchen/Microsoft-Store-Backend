@@ -25,6 +25,7 @@ public class ReviewServiceImpl implements ReviewService {
         return reviewMapper.findByApplicationId(applicationId);
     }
 
+
     // Method to calculate average rating could be added here
 }
 
