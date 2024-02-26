@@ -11,7 +11,7 @@
     <modules>
         <module>review-service</module>
         <module>purchase-service</module>
-        <module>user-system-service</module>
+        <module>user-service</module>
         <module>gift-code-service</module>
         <module>app-service</module>
     </modules>

@@ -7,7 +7,7 @@
   * app-service: 应用展示和搜索服务。
   * review-rating-service: 评论和评分服务。
   * purchase-distribution-service: 购买与分发服务。
-  * user-system-service: 用户系统服务。
+  * user-service: 用户系统服务。
   * gift-code-service: 礼品码系统服务。
 * config-server: 配置管理服务。
 
