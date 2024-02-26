@@ -51,6 +51,7 @@ CREATE TABLE distribution_records (
                                       purchase_id INT,
                                       token VARCHAR(255),
                                       valid_until DATETIME,
+                                      used TINYINT(1) NOT NULL DEFAULT 0;
                                       FOREIGN KEY (purchase_id) REFERENCES purchase_records(id)
 );
 

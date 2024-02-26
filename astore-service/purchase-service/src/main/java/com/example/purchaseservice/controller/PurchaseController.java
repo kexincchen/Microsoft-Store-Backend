@@ -18,13 +18,7 @@ public class PurchaseController {
 
     @PostMapping("/")
     public String purchaseApp(@RequestParam Long userId, @RequestParam Long applicationId) {
-        Purchase purchase = purchaseService.recordPurchase(userId, applicationId);
-        if (purchase != null) {
-            String downloadLink = purchaseService.generateDownloadLink(applicationId);
-            return "Purchase successful. Download link: " + downloadLink;
-        } else {
-            return "Purchase failed.";
-        }
+        return purchaseService.recordPurchaseAndGenerateToken(userId, applicationId);
     }
 }
 
