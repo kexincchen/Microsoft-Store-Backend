@@ -4,6 +4,7 @@ import com.example.reviewservice.entity.Review;
 import com.example.reviewservice.mapper.ReviewMapper;
 import com.example.reviewservice.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -21,10 +22,10 @@ public class ReviewServiceImpl implements ReviewService {
         reviewMapper.insert(review);
     }
 
+    @Cacheable(value = "reviewsByAppId", key = "#applicationId")
     public List<Review> getReviewsByApplicationId(Long applicationId) {
         return reviewMapper.findByApplicationId(applicationId);
     }
-
 
     // Method to calculate average rating could be added here
 }

@@ -7,12 +7,13 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @TableName("distribution_records")
 @NoArgsConstructor
-public class DistributionRecord {
+public class DistributionRecord implements Serializable {
     @TableId(type = IdType.AUTO)
     private Long id;
     private Long purchaseId;

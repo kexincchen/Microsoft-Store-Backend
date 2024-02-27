@@ -5,6 +5,7 @@ import com.example.purchaseservice.entity.DistributionRecord;
 import com.example.purchaseservice.mapper.DistributionRecordMapper;
 import com.example.purchaseservice.service.DistributionRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -28,6 +29,7 @@ public class DistributionRecordServiceImpl implements DistributionRecordService 
     }
 
     // 标记token为已使用或删除token等操作
+    @CacheEvict(value = "distributionTokens", key = "#token")
     public void markTokenAsUsed(String token) {
         int updatedRows = distributionRecordMapper.markTokenAsUsed(token);
         if (updatedRows == 0) {
