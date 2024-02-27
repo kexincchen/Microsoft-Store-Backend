@@ -6,12 +6,16 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Data
 @TableName("applications")
 @NoArgsConstructor
-public class Application {
+public class Application implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L; // 增加一个 serialVersionUID 字段
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     private String name;
