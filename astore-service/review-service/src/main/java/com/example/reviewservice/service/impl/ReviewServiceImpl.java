@@ -4,6 +4,7 @@ import com.example.reviewservice.entity.Review;
 import com.example.reviewservice.mapper.ReviewMapper;
 import com.example.reviewservice.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -18,6 +19,7 @@ public class ReviewServiceImpl implements ReviewService {
         this.reviewMapper = reviewMapper;
     }
 
+    @CacheEvict(value = "reviewsByAppId", key = "#review.applicationId")
     public void addReview(Review review) {
         reviewMapper.insert(review);
     }
