@@ -8,4 +8,6 @@ public interface ApplicationService {
     List<Application> listAllApplications();
 
     List<Application> searchApplicationsByName(String name);
+
+    void addApplication(Application application);
 }
