@@ -1,10 +1,10 @@
-package com.example.userserive.service.impl;
+package com.example.userservice.service.impl;
 
-import com.example.userserive.entity.User;
-import com.example.userserive.entity.UserActivity;
-import com.example.userserive.mapper.UserActivityMapper;
-import com.example.userserive.mapper.UserMapper;
-import com.example.userserive.service.UserService;
+import com.example.userservice.entity.User;
+import com.example.userservice.entity.UserActivity;
+import com.example.userservice.mapper.UserActivityMapper;
+import com.example.userservice.mapper.UserMapper;
+import com.example.userservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;

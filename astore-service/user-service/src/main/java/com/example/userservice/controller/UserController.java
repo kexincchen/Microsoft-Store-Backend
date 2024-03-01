@@ -1,8 +1,8 @@
-package com.example.userserive.controller;
+package com.example.userservice.controller;
 
 
-import com.example.userserive.entity.User;
-import com.example.userserive.service.UserService;
+import com.example.userservice.entity.User;
+import com.example.userservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- Environment Configuration -->
+    <environments default="development">
+        <environment id="development">
+            <!-- Transaction Management -->
+            <transactionManager type="JDBC"/>
+            <!-- DataSource Configuration -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/appstore_server?useSSL=false&amp;serverTimezone=UTC"/>
+                <property name="username" value="root"/>
+                <property name="password" value="Tian3990113"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- Settings -->
+    <settings>
+        <!-- Enable or disable lazy loading -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- Any other settings you need -->
+    </settings>
+
+    <!-- Alias -->
+    <typeAliases>
+        <typeAlias alias="User" type="com.example.userservice.entity.User"/>
+        <typeAlias alias="UserActivity" type="com.example.userservice.entity.UserActivity"/>
+    </typeAliases>
+
+    <!-- Mappers -->
+    <mappers>
+        <mapper resource="com/example/userservice/mapper/UserMapper.xml"/>
+        <mapper resource="com/example/userservice/mapper/UserActivityMapper.xml"/>
+        <!-- Include other mappers as needed -->
+    </mappers>
+
+</configuration>

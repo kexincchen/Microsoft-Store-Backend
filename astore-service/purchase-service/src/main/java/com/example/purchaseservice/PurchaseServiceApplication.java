@@ -7,7 +7,7 @@ import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
 @EnableCaching
-@MapperScan("com.example.purhcaseservice.mapper")
+@MapperScan("com.example.purchaseservice.mapper")
 public class PurchaseServiceApplication {
 
     public static void main(String[] args) {

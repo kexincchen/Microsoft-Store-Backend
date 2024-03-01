@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.yourapplication.mapper.UserMapper">
+
+    <!-- Result Map to auto-map the result set to the User object -->
+    <resultMap id="userResultMap" type="com.example.yourapplication.entity.User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="email" column="email"/>
+        <result property="registrationDate" column="registration_date"/>
+    </resultMap>
+
+    <!-- Insert a new User -->
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO users (username, password, email, registration_date)
+        VALUES (#{username}, #{password}, #{email}, #{registrationDate})
+    </insert>
+
+    <!-- Select a User by ID -->
+    <select id="findUserById" parameterType="long" resultMap="userResultMap">
+        SELECT * FROM users WHERE id = #{id}
+    </select>
+
+    <!-- Select a User by Username -->
+    <select id="findUserByUsername" parameterType="string" resultMap="userResultMap">
+        SELECT * FROM users WHERE username = #{username}
+    </select>
+
+    <!-- Update a User -->
+    <update id="updateUser" parameterType="com.example.yourapplication.entity.User">
+        UPDATE users
+        SET username = #{username}, password = #{password}, email = #{email}, registration_date = #{registrationDate}
+        WHERE id = #{id}
+    </update>
+
+    <!-- Delete a User -->
+    <delete id="deleteUser" parameterType="long">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
+
+    <!-- List all Users -->
+    <select id="findAllUsers" resultMap="userResultMap">
+        SELECT * FROM users
+    </select>
+
+</mapper>

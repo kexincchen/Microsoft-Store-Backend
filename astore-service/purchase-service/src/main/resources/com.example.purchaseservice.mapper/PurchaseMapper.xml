@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.purchaseservice.mapper.PurchaseMapper">
+
+    <!-- Result Map to auto-map the result set to the Purchase object -->
+    <resultMap id="purchaseResultMap" type="com.example.purchaseservice.entity.Purchase">
+        <id property="id" column="id" />
+        <result property="userId" column="user_id" />
+        <result property="applicationId" column="application_id" />
+        <result property="purchaseDate" column="purchase_date" />
+    </resultMap>
+
+    <!-- Insert a new Purchase record -->
+    <insert id="insert" parameterType="com.example.purchaseservice.entity.Purchase">
+        INSERT INTO purchases (user_id, application_id, purchase_date)
+        VALUES (#{userId}, #{applicationId}, #{purchaseDate})
+    </insert>
+
+    <!-- Select a Purchase by ID -->
+    <select id="findById" parameterType="long" resultMap="purchaseResultMap">
+        SELECT * FROM purchases WHERE id = #{id}
+    </select>
+
+    <!-- Update a Purchase record -->
+    <update id="update" parameterType="com.example.purchaseservice.entity.Purchase">
+        UPDATE purchases
+        SET user_id = #{userId}, application_id = #{applicationId}, purchase_date = #{purchaseDate}
+        WHERE id = #{id}
+    </update>
+
+    <!-- Delete a Purchase record -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM purchases WHERE id = #{id}
+    </delete>
+
+    <!-- List all Purchase records -->
+    <select id="findAll" resultMap="purchaseResultMap">
+        SELECT * FROM purchases
+    </select>
+
+    <!-- Additional queries as needed... -->
+
+</mapper>

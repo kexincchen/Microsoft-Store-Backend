@@ -5,7 +5,6 @@ import com.example.reviewservice.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -21,7 +20,7 @@ public class ReviewController {
     }
 
     @PostMapping("/add")
-    public void addReview(@RequestBody String comment, @RequestParam Integer rating, @RequestParam Long userid, @RequestParam Long appid) {
+    public void addReview(@RequestParam String comment, @RequestParam Integer rating, @RequestParam Long userid, @RequestParam Long appid) {
         Review review = new Review(appid, userid, comment, rating, new Date());
         reviewService.addReview(review);
     }

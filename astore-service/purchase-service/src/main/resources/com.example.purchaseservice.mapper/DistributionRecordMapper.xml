@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.purchaseservice.mapper.DistributionRecordMapper">
+
+    <!-- Result Map -->
+    <resultMap id="distributionRecordResultMap" type="com.example.purchaseservice.entity.DistributionRecord">
+        <id column="id" property="id" />
+        <result column="purchase_id" property="purchaseId" />
+        <result column="token" property="token" />
+        <result column="valid_until" property="validUntil" />
+    </resultMap>
+
+    <!-- Insert -->
+    <insert id="insert" parameterType="com.example.purchaseservice.entity.DistributionRecord">
+        INSERT INTO distribution_records (purchase_id, token, valid_until)
+        VALUES (#{purchaseId}, #{token}, #{validUntil})
+    </insert>
+
+    <!-- Find by Token -->
+    <select id="findByToken" resultMap="distributionRecordResultMap">
+        SELECT * FROM distribution_records WHERE token = #{token}
+    </select>
+
+    <!-- Update Token as Used (example) -->
+    <update id="markTokenAsUsed" parameterType="String">
+        UPDATE distribution_records SET used = 1 WHERE token = #{token}
+    </update>
+
+    <!-- Other CRUD operations as necessary -->
+
+</mapper>

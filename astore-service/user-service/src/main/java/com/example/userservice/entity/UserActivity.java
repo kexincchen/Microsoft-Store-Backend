@@ -1,4 +1,4 @@
-package com.example.userserive.entity;
+package com.example.userservice.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;

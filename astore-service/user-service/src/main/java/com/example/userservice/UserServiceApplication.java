@@ -1,4 +1,4 @@
-package com.example.userserive;
+package com.example.userservice;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
