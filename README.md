@@ -1,13 +1,13 @@
 # APP-Store-Backend
+## Project Structure Overview
+This project is designed to provide a comprehensive backend for an application store. Here is an outline of the services and their functions:
 
-# 项目结构规划
-* nacos-server: 服务注册与发现中心。
-* api-gateway: 统一的API网关服务。
-* astore-service:
-  * app-service: 应用展示和搜索服务。
-  * review-service: 评论和评分服务。
-  * purchase-service: 购买与分发服务。
-  * user-service: 用户系统服务。
-  * gift-code-service: 礼品码系统服务。
-* config-server: 配置管理服务。
-
+nacos-server: Service Registry and Discovery Center.
+api-gateway: Unified API Gateway Service.
+app-service: Service for app display and search functionality.
+review-service: Service for managing user reviews and ratings.
+purchase-service: Service handling app purchases and distribution.
+user-service: User management system service.
+gift-code-service: Gift code system service.
+config-server: Configuration management service.
+Each component is crucial for the operation of the app store backend, providing everything from user management to app distribution.
